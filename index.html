@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="noindex, nofollow" name="robots">
+    <title>Sliding Tiles</title>
+    <script src="SlidingTiles.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="gameContainer">
+    <h1>Sliding Tiles</h1>
+    <div id="gameInfoDiv">
+        <p class="fakeButton left" id="fakeImageChanger">Cseréld le a képet!</p>
+        <p class="fakeButton " id="helpButton">Súgó!</p>
+        <input id="imageSwitcher" type="file">
+        <p class="fakeButton right" onclick="p.startNewGame()">Új játék</p>
+    </div>
+    <div id="settingsDiv">
+        <div>
+            <label for="rowNumInput">Sorok száma:</label>
+            <input id="rowNumInput" max="10" min="2" size="2" type="number" value=4>
+        </div>
+        <div>
+            <label for="colNumInput">Oszlopok száma: </label>
+            <input id="colNumInput" max="10" size="2" type="number" value="4">
+        </div>
+    </div>
+    <div id="gridDiv">
+        <img alt="Minta kép a játékhoz" id="fullPhoto" src="">
+        <div>
+            <table id="puzzleTable"></table>
+        </div>
+    </div>
+    <canvas id="imgCutter"></canvas>
+</div>
+<div class="popup" id="messagePopup">
+    <div>
+        <div class="buttonDiv">
+            <p id="popupStringDiv">Nyertél!</p>
+            <a class="continueButton"
+               onclick="document.getElementById('messagePopup').classList.remove('won');">Bezár</a>
+            <a class="retryButton" onclick="p.startNewGame()">Újra játszom</a>
+        </div>
+    </div>
+</div>
+<div class="popup" id="helpPopup">
+    <div>
+        <div>
+            <h2>SliderPuzzle</h2>
+            <div>
+                <h3>Játék célja</h3>
+                <p>Rendezd át a jobb oldali (vagy mobilon alsó) összekevert csempedarabokat, hogy az áldaluk megrajzolt
+                    kép megegyezzen
+                    a bal oldali léppel, kivéve a jobb alsó sarkot ahova az üres csempe kerül.</p>
+                <p>
+                    A kép lecserélhető a "Cseréld le a képet!" feliratra kattintással.
+                </p>
+                <p>
+                    A csempék száma megváltoztatható a "Sorok száma" és az "Oszlopok száma" mezők módosításával és az
+                    "Új játék" feliratra kattintással
+                    A mezők értéke 2 és 10 közötti szám lehet.
+                </p>
+            </div>
+            <div>
+                <h3>Irányítás</h3>
+                <p>Az üres csempével függőlegesen és vizszintesen szomszédos csempék mozgathatóak a bal egérgombbal
+                    egyszeri rákattintásával
+                    vagy az érintőképernyőn egyszerű megérintésével.
+                </p>
+                <p>Az üres csemp helyzete függőlegesen és vizszintesen mozgatható a billentyűzet "W" (fel) ,"A"
+                    (balra),"S"(le),"D" (jobbra)
+                    gomb megnyomásával, vagy az érintő képernyő megfelelő irányba való húzásával.
+                </p>
+            </div>
+            <div>
+                <h3>Forráskód</h3>
+                <p><a href="https://github.com/nemodaattila/SlidingTiles" target="_blank">https://github.com/nemodaattila/SlidingTiles</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    let p = new SlidingTiles();
+    p.replacePuzzleImage("gl.jpg")
+</script>

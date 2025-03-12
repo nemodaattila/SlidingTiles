@@ -1,0 +1,231 @@
+html, body {
+    margin: 0;
+    padding: 10px;
+    background: #faf8ef;
+    color: #776e65;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 30px
+}
+
+#gameTable {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    position: relative;
+    padding: 15px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -ms-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -ms-touch-action: none;
+    touch-action: none;
+    background: #bbada0;
+    border-radius: 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#gameContainer {
+    width: 95%;
+    margin: 0 auto
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0;
+    display: block;
+    text-align: center
+}
+
+#gridDiv {
+    display: grid;
+    width: 100%;
+    grid-template-columns:repeat(auto-fill, 50%);
+    justify-content: space-evenly
+}
+
+#gridDiv > * {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media screen and (max-width: 999px) {
+    #gridDiv {
+        grid-template-columns:repeat(auto-fill, 100%)
+    }
+}
+
+#gameInfoDiv {
+    display: flex;
+    justify-content: space-evenly
+}
+
+#imageSwitcher {
+    display: none
+}
+
+.fakeButton {
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    display: block;
+    text-align: center;
+    cursor: pointer
+}
+
+.fakeButton.left {
+    float: left
+}
+
+.fakeButton.right {
+    float: right
+}
+
+#settingsDiv {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly
+}
+
+#settingsDiv label {
+    font-weight: 700
+}
+
+#fullPhoto {
+    display: block
+}
+
+#puzzleTable {
+    border: 1px solid;
+    border-collapse: collapse
+}
+
+#puzzleTable td {
+    padding: 0;
+    border: 1px solid;
+    border-spacing: 0;
+    touch-action: none
+}
+
+#imgCutter {
+    display: none
+}
+
+#puzzleTable img {
+    display: block;
+    left: 0;
+    top: 0;
+    position: relative
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+    background: rgb(238 228 218)
+}
+
+#messagePopup {
+    background: rgb(238 228 218 / .5)
+}
+
+#helpPopup > div {
+    margin: 10px
+}
+
+.initial {
+    display: initial
+}
+
+.popup > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: 3px solid green
+}
+
+#popupStringDiv {
+    font-size: 60px;
+    font-weight: 700;
+    height: 60px;
+    line-height: 60px;
+    padding-top: 30px;
+    margin-block-start: 0
+}
+
+#messagePopup .buttonDiv {
+    display: block;
+    width: 100%
+}
+
+#messagePopup .buttonDiv a {
+    display: inline-block;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    margin-left: 9px;
+    margin-bottom: 30px
+}
+
+a.continueButton {
+    display: none
+}
+
+#messagePopup.won .buttonDiv {
+    background: rgb(237 194 46 / .5);
+    color: #f9f6f2
+}
+
+#messagePopup.lost .buttonDiv a.continueButton {
+    display: none
+}
+
+#messagePopup.won .buttonDiv a.continueButton {
+    display: inline-block
+}
+
+#messagePopup.won, #messagePopup.lost {
+    display: initial
+}
+
+input[type=number] {
+    width: 3em;
+    padding: .5em;
+    border: .2em solid #E91E63;
+    border-radius: 1em;
+    text-align: center;
+    color: #776e65;;
+    appearance: textfield;
+    margin: 0;
+    font-size: 30px
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    display: none;
+    opacity: 1;
+    background: red
+}
+
+.hidden {
+    display: none !important
+}
